@@ -1,35 +1,23 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+declare(strict_types=1);
 
-use App\Database\MySQLDatabase;
+require_once __DIR__ . '/../src/config.php';
+
+use App\Controllers\DonationController;
+use App\Controllers\HomeController;
+use App\Controllers\UserController;
 use App\Web\Router;
 
-$hostname = getenv('MYSQL_DB_HOST');
-$database = getenv('MYSQL_DB_NAME');
-$username = getenv('MYSQL_DB_USER');
-$password = getenv('MYSQL_DB_PASSWORD');
-
-try {
-	$databaseConnection = MySQLDatabase::getInstance();
-	$databaseConnection->setPersistent(true);
-	$databaseConnection->connect($hostname, $database, $username, $password);
-} catch (Exception $e) {
-	echo 'Error connecting to the database.';
-}
-
-$homeController = new \App\Controllers\HomeController();
-$donationController = new \App\Controllers\DonationController();
-$userController = new \App\Controllers\UserController();
+$homeController = new HomeController();
+$donationController = new DonationController();
+$userController = new UserController();
 
 $router = new Router();
-$router->get('/', fn () => $homeController->index());
-$router->get('/signup', fn () => $userController->create());
-$router->post('/signup', fn () => $userController->store());
-$router->post('/donate', fn () => $donationController->store());
-$router->get('/donation', fn () => $donationController->index());
+$router->get('/', static fn () => $homeController->index());
+$router->get('/signup', static fn () => $userController->create());
+$router->post('/signup', static fn () => $userController->store());
+$router->post('/donate', static fn () => $donationController->store());
+$router->get('/donation', static fn () => $donationController->index());
 
 $router->handleRequest();
-
-
-
