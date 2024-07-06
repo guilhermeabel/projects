@@ -6,7 +6,7 @@ namespace App\Model;
 
 use App\Database\MySQLDatabase;
 
-class Products {
+class Product {
     private MySQLDatabase $database;
 
     public function __construct() {

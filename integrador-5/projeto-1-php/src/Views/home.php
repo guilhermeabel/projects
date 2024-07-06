@@ -31,13 +31,13 @@
 						<a class="nav-link active" aria-current="page" href="#">Início</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Nossos pets</a>
+						<a class="nav-link" href="#pets-list">Nossos pets</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#missao">Nossa missão</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#about">Quem somos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Voluntários</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="/products">Produtos</a>
@@ -63,28 +63,12 @@
 					importância da adoção responsável.</p>
 			</div>
 
-			<div class="row mt-5">
+			<div id="pets-list" class="row mt-5">
 				<section class="adoption-container">
 					<h3>Adote um de nossos pets!</h3>
 					<p>Escolha o bichinho perfeito pra você.</p>
 				</section>
-				<?php foreach ($pets as $pet) { ?>
-				<div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-					<div class="card">
-						<img src="./assets/Images/<?php echo $pet['photo']; ?>" class="card-img-top" alt="<?php echo $pet['name']; ?>">
-						<div class="card-body">
-							<h5 class="card-title"><?php echo $pet['name']; ?></h5>
-							<p class="card-text"><?php echo $pet['description']; ?></p>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item"><b>Idade</b>: <?php echo $pet['age']; ?></li>
-								<li class="list-group-item"><b>Porte</b>: <?php echo $pet['size']; ?></li>
-								<li class="list-group-item"></li>
-							</ul>
-							<a href="#" class="btn donation">Conhecer</a>
-						</div>
-					</div>
-				</div>
-				<?php } ?>
+				<div id="pets-loading"></div>
 			</div>
 
 			</section>
@@ -102,7 +86,7 @@
 				</p>
 
 			</section>
-			<section class="mission-and-values">
+			<section id="missao" class="mission-and-values">
 				<h3>Missão</h3>
 				<ol>
 					<li><strong>Resgate e Reabilitação:</strong> Trabalhamos incansavelmente para resgatar animais
@@ -178,9 +162,12 @@
 			2023 Instituição 4Patas. Todos os direitos reservados.
 		</footer>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-			crossorigin="anonymous"></script>
-
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+		</script>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+		<script src="assets/JS/utils.js" defer></script>
+		<script src="assets/JS/home.js" defer></script>
 </body>
 
 </html>

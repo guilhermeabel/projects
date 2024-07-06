@@ -2,23 +2,8 @@ window.onload = function() {
 	fetchProducts();
 }
 
-function displayLoading() {
-	var loading = document.getElementById('loading-products');
-	loading.innerHTML = `
-		<div class="col-12 text-center">
-			<div class="spinner-border text-primary" role="status">
-			</div>
-		</div>
-	`;
-}
-
-function hideLoading () {
-	var loading = document.getElementById('loading-products');
-	loading.innerHTML = '';
-}
-
 function fetchProducts() {
-	displayLoading();
+	displayLoadingProducts();
 
 	$.ajax({
 		url: '/api/v1/products/all',
@@ -26,7 +11,7 @@ function fetchProducts() {
 		dataType: 'json',
 		success: function() {
 			console.log("Sucesso ao obter produtos.");
-			hideLoading();
+			hideLoadingProducts();
 		},
 		error: function(status, error) {
 			console.log("Erro ao obter produtos.");
@@ -58,6 +43,17 @@ function fetchProducts() {
 	});
 }
 
-function numberToMoney(number) {
-	return "R$ " + number.replace('.', ',');
+function displayLoadingProducts() {
+	var loading = document.getElementById('products-loading');
+	loading.innerHTML = `
+		<div class="col-12 text-center">
+			<div class="spinner-border text-primary" role="status">
+			</div>
+		</div>
+	`;
+}
+
+function hideLoadingProducts () {
+	var loading = document.getElementById('products-loading');
+	loading.innerHTML = '';
 }

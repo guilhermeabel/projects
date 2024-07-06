@@ -9,7 +9,6 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
 			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-		<script src="assets/JS/main.js" defer></script>
 	</head>
 
 	<body class="donate-body">
@@ -24,21 +23,21 @@
 					<label class="form-label" for="email">E-mail:</label>
 					<input class="form-control" type="email" name="email" placeholder="Seu e-mail" required>
 					<div class="invalid-feedback">
-						<?= ($errors && isset($errors['email'])) ? $errors['email'] : '' ?>
+						<?php echo ($errors && isset($errors['email'])) ? $errors['email'] : ''; ?>
 					</div>
 				</div>
 				<div class='mb-3'>
 					<label class="form-label" for="cpf">CPF:</label>
 					<input oninput="this.value = parseCpf(this.value)" class="form-control" type="text" name="document" placeholder="Seu CPF" minlength="14" maxlength="14" required>
 					<div class="invalid-feedback">
-						<?= ($errors && isset($errors['document'])) ? $errors['document'] : '' ?>
+						<?php echo ($errors && isset($errors['document'])) ? $errors['document'] : ''; ?>
 					</div>
 				</div>
 				<div class='mb-3'>
 					<label class="form-label" for="value">Valor:</label>
 					<input class="form-control" type="number" name="amount" placeholder="Valor da doação" required>
 					<div class="invalid-feedback">
-						<?= ($errors && isset($errors['amount'])) ? $errors['amount'] : '' ?>
+						<?php echo ($errors && isset($errors['amount'])) ? $errors['amount'] : ''; ?>
 					</div>
 				</div>
 				<div class='mb-3'>
@@ -60,8 +59,8 @@
 						<label class="form-check-label" for="bank-slip">Boleto</label>
 					</div>
 					<div class="invalid-feedback">
-						<?= ($errors && isset($errors['donation-method'])) ? $errors['donation-method'] : '' ?>
-						<?= ($errors && isset($errors['database'])) ? $errors['database'] : '' ?>
+						<?php echo ($errors && isset($errors['donation-method'])) ? $errors['donation-method'] : ''; ?>
+						<?php echo ($errors && isset($errors['database'])) ? $errors['database'] : ''; ?>
 					</div>
 				</div>
 				<input type="submit" value="Confirmar">
@@ -71,6 +70,7 @@
 		<footer id="donation-footer">
 			<p>2023 Instituição 4Patas. Todos os direitos reservados.</p>
 		</footer>
+		<script src="assets/JS/utils.js" defer></script>
 	</body>
 
 </html>

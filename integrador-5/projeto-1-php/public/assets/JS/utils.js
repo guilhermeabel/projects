@@ -1,3 +1,7 @@
+function numberToMoney(number) {
+	return "R$ " + number.replace('.', ',');
+}
+
 function parseCpf(v){
     v=v.replace(/\D/g,"")                   
     v=v.replace(/(\d{3})(\d)/,"$1.$2")      

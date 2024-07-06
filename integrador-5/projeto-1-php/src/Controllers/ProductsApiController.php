@@ -4,21 +4,21 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use App\Model\Products;
+use App\Model\Product;
 
 class ProductsApiController extends ApiController {
-    public function get(int $id) {
-        $product = (new Products())->find($id);
+    public function get(int $id): void {
+        $product = (new Product())->find($id);
 
         $this->status = !empty($product) ? 200 : 404;
 
-        return $this->data([
+        echo $this->data([
             'product' => $product,
         ]);
     }
 
     public function all(): void {
-        $products = (new Products())->all();
+        $products = (new Product())->all();
 
         $this->status = !empty($products) ? 200 : 404;
 
@@ -27,12 +27,12 @@ class ProductsApiController extends ApiController {
         ]);
     }
 
-    public function latest() {
-        $products = (new Products())->latest();
+    public function latest(): void {
+        $products = (new Product())->latest();
 
         $this->status = !empty($products) ? 200 : 404;
 
-        return $this->data([
+        echo $this->data([
             'products' => $products,
         ]);
     }
