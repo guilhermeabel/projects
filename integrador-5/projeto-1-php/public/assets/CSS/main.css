@@ -266,3 +266,11 @@ h3 {
 	background-color: white;
 	border: 1px solid black;
 }
+
+#products-list {
+	min-height: 20vh;
+
+	.list-group-item {
+		padding-left: 0;
+	}
+}

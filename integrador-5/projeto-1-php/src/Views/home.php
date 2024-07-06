@@ -39,7 +39,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">Voluntários</a>
 					</li>
-
+					<li class="nav-item">
+						<a class="nav-link" href="/products">Produtos</a>
+					</li>
 				</ul>
 				<div class="d-lg-flex col-lg-4 justify-content-lg-end">
 					<a href="signup" class="btn btn-link">Criar conta</a>
@@ -66,23 +68,23 @@
 					<h3>Adote um de nossos pets!</h3>
 					<p>Escolha o bichinho perfeito pra você.</p>
 				</section>
-				<?php foreach ($pets as $pet) : ?>
+				<?php foreach ($pets as $pet) { ?>
 				<div class="col-sm-6 col-md-6 col-lg-4 mb-4">
 					<div class="card">
-						<img src="./assets/Images/<?= $pet['photo'] ?>" class="card-img-top" alt="<?= $pet['name'] ?>">
+						<img src="./assets/Images/<?php echo $pet['photo']; ?>" class="card-img-top" alt="<?php echo $pet['name']; ?>">
 						<div class="card-body">
-							<h5 class="card-title"><?= $pet['name'] ?></h5>
-							<p class="card-text"><?= $pet['description'] ?></p>
+							<h5 class="card-title"><?php echo $pet['name']; ?></h5>
+							<p class="card-text"><?php echo $pet['description']; ?></p>
 							<ul class="list-group list-group-flush">
-								<li class="list-group-item"><b>Idade</b>: <?= $pet['age'] ?></li>
-								<li class="list-group-item"><b>Porte</b>: <?= $pet['size'] ?></li>
+								<li class="list-group-item"><b>Idade</b>: <?php echo $pet['age']; ?></li>
+								<li class="list-group-item"><b>Porte</b>: <?php echo $pet['size']; ?></li>
 								<li class="list-group-item"></li>
 							</ul>
 							<a href="#" class="btn donation">Conhecer</a>
 						</div>
 					</div>
 				</div>
-				<?php endforeach; ?>
+				<?php } ?>
 			</div>
 
 			</section>

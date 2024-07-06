@@ -9,7 +9,6 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
 			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-		<script src="assets/JS/main.js" defer></script>
 	</head>
 
 	<body class="donate-body">
@@ -25,18 +24,18 @@
 			</div>
 
 			<div class='mb-3'>
-				<p>E-mail: <?= $info['email'] ?></p>
+				<p>E-mail: <?php echo $info['email']; ?></p>
 			</div>
 
 			<div class='mb-3'>
-				<p>Valor: <?= $info['amount'] ?></p>
+				<p>Valor: <?php echo $info['amount']; ?></p>
 			</div>
 
 			<div class='mb-3'>
-				<p>Data: <?= $info['date'] ?></p>
+				<p>Data: <?php echo $info['date']; ?></p>
 			</div>
 			<a href="/"><button type="button" class="btn btn-primary">Voltar para a Home</button></a>
-		
+
 		</section>
 		</main>
 		<footer id="donation-footer">
