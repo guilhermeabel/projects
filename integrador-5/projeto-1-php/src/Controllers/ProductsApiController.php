@@ -6,7 +6,7 @@ namespace App\Controllers;
 
 use App\Model\Products;
 
-class ProductsController extends ApiController {
+class ProductsApiController extends ApiController {
     public function get(int $id) {
         $product = (new Products())->find($id);
 
