@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use App\Model\ProductImages;
 use App\Model\Products;
 
 class ProductsApiController extends ApiController {
@@ -25,16 +24,6 @@ class ProductsApiController extends ApiController {
 
         echo $this->data([
             'products' => $products,
-        ]);
-    }
-
-    public function images(int $productId) {
-        $images = (new ProductImages())->findByProductId($productId);
-
-        $this->status = !empty($images) ? 200 : 404;
-
-        return $this->data([
-            'images' => $images,
         ]);
     }
 

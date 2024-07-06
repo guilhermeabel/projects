@@ -29,6 +29,5 @@ $router->get('/products', static fn () => $productsController->index());
 $router->get('/api/v1/products/all', static fn () => $productsApiController->all());
 $router->get('/api/v1/products/latest', static fn () => $productsApiController->latest());
 $router->get('/api/v1/product/{id}', static fn (int $id) => $productsApiController->get($id));
-$router->get('/api/v1/product/{id}/images', static fn () => $productsApiController->images($productId));
 
 $router->handleRequest();

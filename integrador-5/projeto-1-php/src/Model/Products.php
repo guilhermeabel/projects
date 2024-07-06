@@ -36,10 +36,4 @@ class Products {
     public function delete(int $id): void {
         $this->database->query("DELETE FROM products WHERE id = {$id}");
     }
-
-    private function getProductImages(int $productId): array {
-        $productImagesModel = new ProductImages();
-
-        return $productImagesModel->findByProductId($productId);
-    }
 }

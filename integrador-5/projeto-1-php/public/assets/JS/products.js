@@ -42,10 +42,9 @@ function fetchProducts() {
 			productCard.className = 'col-sm-6 col-md-6 col-lg-4 mb-4';
 			productCard.innerHTML = `
 				<div class="card">
-					<img src="./assets/Images/${product.main_image}" class="card-img-top" alt="${product.name}">
+					<img src="./assets/Images/products/${product.main_image}" class="card-img-top" alt="${product.name}">
 					<div class="card-body">
-						<h5 class="card-title
-						">${product.name}</h5>
+						<h5 class="card-title">${product.name}</h5>
 						<p class="card-text">${product.description}</p>
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">${numberToMoney(product.price)}</li>

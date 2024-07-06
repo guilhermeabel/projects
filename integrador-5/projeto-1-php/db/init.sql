@@ -57,18 +57,14 @@ INSERT INTO `pets` (`id`, `name`, `age`, `breed`, `size`, `photo`, `description`
 (2, 'Daisy', '2 anos', 'Vira-lata', 'Médio', 'daisy.png', 'Esta linda cadelinha foi resgatada de uma situação de abandono e maus-tratos. Ela é muito carinhosa e adora brincar. Daisy está pronta para encontrar um lar onde possa ser amada e cuidada como merece. Adote esta linda cadelinha e dê a ela a oportunidade de uma vida feliz!'),
 (3, 'Rocky', '3 anos', 'Vira-lata', 'Grande', 'rocky.png', 'Este lindo cãozinho foi resgatado de uma situação de abandono e maus-tratos. Ele é muito carinhoso e adora brincar. Rocky está pronto para encontrar um lar onde possa ser amado e cuidado como merece. Adote este lindo cãozinho e dê a ele a oportunidade de uma vida feliz!');
 
-INSERT INTO `products` (`id`, `name`, `description`, `price`, `main_image`) VALUES
-(1, 'Ração Premier', 'Ração Premier Pet Golden Formula Adultos Frango e Arroz - 15kg', 150.00, 'produto1.jpg'),
-(2, 'Ração Pedigree', 'Ração Pedigree Vital Pro Frango e Carne - 20kg', 200.00, 'produto2.jpg'),
-(3, 'Ração Royal Canin', 'Ração Royal Canin Maxi Adulto - 15kg', 250.00, 'produto3.jpg'),
-(4, 'Ração Whiskas', 'Ração Whiskas Carne - 10kg', 100.00, 'produto4.jpg'),
-(5, 'Ração Golden', 'Ração Golden Duo Frango e Carne - 20kg', 180.00, 'produto5.jpg');
+INSERT INTO `products` (`description`, `id`, `main_image`, `name`, `price`) VALUES 
+('Casinha para Cachorro tamanho Grande, feita em material reciclado, resistente e de alta qualidade.', 1, 'casinha-cachorr-grande.jpg', 'Casinha de Cachorro Grande', '350.00'),
+('Coleira rosa em material resistente', 2, 'coleira-rosa.jpg', 'Coleira rosa', '20.00'),
+('Para cachorros ou gatos, tamanho pequeno', 3, 'casinha-cachorro.jpg', 'Casinha de madeira', '150.00'),
+('Par de coleiras tamanho médio de material couro.', 4, 'par-coleira-marrom.jpg', 'Par coleira marrom couro', '100.00'),
+('Pote de ração em tamanho 15cm. Material Plástico de alta durabilidade', 5, 'pote-racao-vermelho.jpg', 'Pote de ração Vermelho', '40.00'),
+('Pote de ração em tamanho 20cm. Material Inox de alta durabilidade', 6, 'pote-racao.jpg', 'Pote de ração', '50.00'),
+('Para cachorros ou gatos tamanho M, guia com peitoral\n', 7, 'guia.jpg', 'Guia Vermelha', '60.00');
 
-INSERT INTO `product_images` (`id`, `product_id`, `image_name`) VALUES
-(1, 1, 'produto1.jpg'),
-(2, 2, 'produto2.jpg'),
-(3, 3, 'produto3.jpg'),
-(4, 4, 'produto4.jpg'),
-(5, 5, 'produto5.jpg');
 
 
