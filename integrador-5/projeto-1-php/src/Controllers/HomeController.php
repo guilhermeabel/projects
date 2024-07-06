@@ -1,12 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controllers;
 
-class HomeController extends BaseController {
+use App\Model\Pet;
 
-	public function index() {
-		$pets = (new \App\Model\Pet())->latest();
+class HomeController extends PagesController {
+    public function index() {
+        $pets = (new Pet())->latest();
 
-		return $this->view("home", ['pets' => $pets]);
-	}
+        return $this->view('home', ['pets' => $pets]);
+    }
 }

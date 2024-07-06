@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Database\MySQLDatabase;
 
-class UserController extends BaseController {
+class UserController extends PagesController {
 	private MySQLDatabase $database;
 
 	public function __construct() {
