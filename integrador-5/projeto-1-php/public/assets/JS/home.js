@@ -27,7 +27,7 @@ function fetchPets() {
 			petCard.className = 'col-sm-6 col-md-6 col-lg-4 mb-4';
 			petCard.innerHTML = `
 				<div class="card">
-					<img src="./assets/Images/${pet.photo}" class="card-img-top" alt="${pet.name}">
+					<img src="./assets/Images/pets/${pet.photo}" class="card-img-top" alt="${pet.name}">
 					<div class="card-body">
 						<h5 class="card-title">${pet.name}</h5>
 						<p class="card-text">${pet.description}</p>
